@@ -1,0 +1,10 @@
+project: savantenvs/freetype
+target: fuzz_ftvalidate
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_ftvalidate/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_ftvalidate
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_ftvalidate/fuzz_ftvalidate.dict
+    timeout: 20
