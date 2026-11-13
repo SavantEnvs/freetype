@@ -1,0 +1,10 @@
+project: savantenvs/freetype
+target: fuzz_ftface
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_ftface/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_ftface
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_ftface/fuzz_ftface.dict
+    timeout: 20

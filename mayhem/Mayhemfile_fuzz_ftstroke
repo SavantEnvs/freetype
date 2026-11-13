@@ -1,0 +1,10 @@
+project: savantenvs/freetype
+target: fuzz_ftstroke
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_ftstroke/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_ftstroke
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_ftstroke/fuzz_ftstroke.dict
+    timeout: 20
